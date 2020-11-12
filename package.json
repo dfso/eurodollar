@@ -1,0 +1,16 @@
+{
+  "name": "eurodollar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": "https://github.com/dfso/eurodollar.git",
+  "author": "dfso <denison.new@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
