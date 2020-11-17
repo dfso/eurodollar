@@ -1,4 +1,6 @@
 import Head from "next/head";
+
+
 function Home({ usd_brl, eur_brl }) {
   return (
     <div style={{ textAlign: "center"}}>
@@ -14,14 +16,18 @@ function Home({ usd_brl, eur_brl }) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
+export async function getStaticProps() {
   const usd = await fetch("https://api.exchangeratesapi.io/latest?base=USD");
   const eur = await fetch("https://api.exchangeratesapi.io/latest?base=EUR");
   const json_usd = await usd.json();
   const json_eur = await eur.json();
+
   return {
+    props: {
     usd_brl: json_usd.rates["BRL"],
     eur_brl: json_eur.rates["BRL"],
-  };
+    },
+  }
 };
+
 export default Home;
