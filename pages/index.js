@@ -16,7 +16,7 @@ function Home({ usd_brl, eur_brl }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const usd = await fetch("https://api.exchangeratesapi.io/latest?base=USD");
   const eur = await fetch("https://api.exchangeratesapi.io/latest?base=EUR");
   const json_usd = await usd.json();
