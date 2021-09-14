@@ -11,21 +11,22 @@ function Home({ usd_brl, eur_brl }) {
       </Head>
       <h1><i class="fas fa-money-check-alt"></i></h1>
       <h2><i class="fas fa-dollar-sign"></i> = {Number(usd_brl).toFixed(2)} BRL</h2>
-      <h2><i class="fas fa-euro-sign"></i> = {Number(eur_brl).toFixed(2)} BRL</h2>
+      //<h2><i class="fas fa-euro-sign"></i> = {Number(eur_brl).toFixed(2)} BRL</h2>
     </div>
   );
 }
 
 export async function getServerSideProps() {
-  const usd = await fetch("https://api.exchangeratesapi.io/latest?base=USD");
-  const eur = await fetch("https://api.exchangeratesapi.io/latest?base=EUR");
+  const usd = await fetch("http://api.currencylayer.com/live?access_key=46b3373b7a6c2886d023867cb3aa3db8");
+  //const eur = await fetch("https://api.exchangeratesapi.io/latest?base=EUR");
   const json_usd = await usd.json();
-  const json_eur = await eur.json();
+  //const json_eur = await eur.json();
 
   return {
     props: {
-    usd_brl: json_usd.rates["BRL"],
-    eur_brl: json_eur.rates["BRL"],
+    //usd_brl: json_usd.rates["BRL"],
+    usd_brl: json_usd.quotes["USDBRL"],
+    //eur_brl: json_eur.rates["BRL"],
     },
   }
 };
