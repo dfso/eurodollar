@@ -11,7 +11,7 @@ function Home({ usd_brl, eur_brl }) {
       </Head>
       <h1><i class="fas fa-money-check-alt"></i></h1>
       <h2><i class="fas fa-dollar-sign"></i> = {Number(usd_brl).toFixed(2)} BRL</h2>
-      //<h2><i class="fas fa-euro-sign"></i> = {Number(eur_brl).toFixed(2)} BRL</h2>
+      <!-- <h2><i class="fas fa-euro-sign"></i> = {Number(eur_brl).toFixed(2)} BRL</h2> -->
     </div>
   );
 }
